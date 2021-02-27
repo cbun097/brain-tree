@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>Brain Tree</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link 
@@ -10,10 +10,11 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css"
     >
     <script defer src="renderer.js"></script>
+    <script defer src="menu.js"></script>
   </head>
   <body>
     <div class="columns">
-      <div class="column is-one-third">
+      <div class="column is-one-quarter">
         <aside class="menu">
           <ul class="menu-list">
             <li><a href="">Markdown 1</a></li>
@@ -23,11 +24,20 @@
       </div>
       <div class="column">
         <div class="section">
+          <button id="save-file-btn" type="button" class="button is-rounded is-info">Save file</button>
           <button id="select-file-btn" type="button" class="button is-rounded is-primary">Select File</button>
           <button id="close-btn" class="button is-rounded is-warning">Close</button>   
         </div>
-        <div class="content md"></div> 
-        <div class="content md-editor"></div>
+          <div class="columns md-editor">
+            <div class="column is-half">
+              <p>Markdown</p>
+              <textarea class="textarea md-content" id='md-content' rows="10"></textarea>
+            </div>
+            <div class="column is-half">
+              <p>Preview</p>
+              <div class="box column md" id='md'></div>
+            </div>
+          </div>
       </div>
     </div>
   </body>
